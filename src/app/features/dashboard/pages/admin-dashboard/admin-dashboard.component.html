@@ -1,0 +1,64 @@
+<div class="admin-dashboard">
+
+  <div class="topbar">
+    <div>
+      <h2>Welcome, {{ username }}</h2>
+      <p>Manage SecureDeck system from one place.</p>
+    </div>
+
+    <button class="logout-btn" (click)="logout()">
+      Logout
+    </button>
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card clickable"
+         (click)="goToPendingApprovals()">
+      <h3>{{ pendingUsers }}</h3>
+      <p>Pending Approvals</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>{{ totalUsers }}</h3>
+      <p>Total Users</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>{{ managers }}</h3>
+      <p>Managers</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>{{ accountants }}</h3>
+      <p>Accountants</p>
+    </div>
+
+  </div>
+
+  <div class="quick-actions">
+
+    <div class="action-card"
+         (click)="goToPendingApprovals()">
+      <h4>Approve Users</h4>
+      <p>Review newly registered users.</p>
+    </div>
+
+    <div class="action-card">
+      <h4>User Management</h4>
+      <p>Manage active user accounts.</p>
+    </div>
+
+    <div class="action-card">
+      <h4>Reports</h4>
+      <p>View analytics and summaries.</p>
+    </div>
+
+    <div class="action-card">
+      <h4>Settings</h4>
+      <p>System configuration options.</p>
+    </div>
+
+  </div>
+
+</div>

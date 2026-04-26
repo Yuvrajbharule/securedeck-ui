@@ -1,0 +1,28 @@
+.wrapper {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 10px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#2563eb,#10b981);
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}

@@ -1,0 +1,35 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <input
+    type="text"
+    placeholder="Username"
+    formControlName="username">
+
+  <input
+    type="email"
+    placeholder="Email"
+    formControlName="email">
+
+  <input
+    type="password"
+    placeholder="Password"
+    formControlName="password">
+
+  <input
+    type="text"
+    placeholder="Mobile Number"
+    formControlName="mobile">
+
+  <button type="submit" [disabled]="loading">
+    {{ loading ? 'Please wait...' : 'Register' }}
+  </button>
+
+  <p class="success" *ngIf="successMessage">
+    {{ successMessage }}
+  </p>
+
+  <p class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
+
+</form>

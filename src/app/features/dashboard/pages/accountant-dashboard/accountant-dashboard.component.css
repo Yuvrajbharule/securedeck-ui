@@ -1,0 +1,76 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 30px;
+}
+
+.topbar {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 5px 0 0;
+  color: #64748b;
+}
+
+.right-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.role-badge {
+  background: #2563eb;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #ef4444;
+  color: white;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.dash-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.2s ease;
+}
+
+.dash-card:hover {
+  transform: translateY(-4px);
+}
+
+.dash-card h3 {
+  margin-top: 0;
+}
+
+.dash-card p {
+  color: #64748b;
+}

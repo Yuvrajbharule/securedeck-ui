@@ -1,0 +1,39 @@
+<div class="dashboard-container">
+
+  <div class="topbar">
+    <div>
+      <h1>Welcome {{ username }}</h1>
+      <p class="subtitle">Accountant-dashbourd</p>
+    </div>
+
+    <div class="right-box">
+      <span class="role-badge">{{ role }}</span>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="dash-card">
+      <h3>Manage Employees</h3>
+      <p>View all company staff and users.</p>
+    </div>
+
+    <div class="dash-card">
+      <h3>Approve Users</h3>
+      <p>Approve pending registrations.</p>
+    </div>
+
+    <div class="dash-card">
+      <h3>Update Roles</h3>
+      <p>Assign permissions to employees.</p>
+    </div>
+
+    <div class="dash-card">
+      <h3>Reports</h3>
+      <p>Check company analytics & data.</p>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,105 @@
+<div class="admin-page">
+
+  <div class="page-header">
+    <div>
+      <h2>Pending User Approvals</h2>
+      <p>Review and approve newly registered users.</p>
+    </div>
+    <span class="badge">{{ pendingUsers.length }} Pending</span>
+  </div>
+
+  <div class="alert success" *ngIf="message">
+    {{ message }}
+  </div>
+
+  <div class="table-card">
+
+    <div class="table-toolbar">
+      <input
+        type="text"
+        placeholder="Search users..."
+        class="search-box"
+      />
+    </div>
+
+    <div *ngIf="loading" class="loader-wrap">
+      <div class="loader"></div>
+      <p>Loading users...</p>
+    </div>
+
+    <div class="table-responsive" *ngIf="!loading && pendingUsers.length > 0">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Contact</th>
+            <th>Status</th>
+            <th>Assign Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of pendingUsers">
+
+            <td>#{{ user.id }}</td>
+
+            <td>
+              <div class="user-cell">
+                <div class="avatar">
+                  {{ user.username.charAt(0) | uppercase }}
+                </div>
+                <div>
+                  <strong>{{ user.username }}</strong>
+                  <small>{{ user.email }}</small>
+                </div>
+              </div>
+            </td>
+
+            <td>{{ user.mobile }}</td>
+
+            <td>
+              <span class="status pending">
+                Pending
+              </span>
+            </td>
+
+            <td>
+              <select #roleSelect class="role-select">
+                <option value="">Select Role</option>
+                <option
+                  *ngFor="let role of roles"
+                  [value]="role">
+                  {{ role }}
+                </option>
+              </select>
+            </td>
+
+            <td>
+              <button
+                class="approve-btn"
+                (click)="approve(user, roleSelect.value)">
+                Approve
+              </button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div
+      class="empty-state"
+      *ngIf="!loading && pendingUsers.length === 0">
+
+      <h3>No Pending Users</h3>
+      <p>All registrations are already reviewed.</p>
+
+    </div>
+
+  </div>
+
+</div>
