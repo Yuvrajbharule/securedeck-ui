@@ -1,5 +1,19 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
+  <div class="row">
+
+    <input
+      type="text"
+      placeholder="First Name"
+      formControlName="firstName">
+
+    <input
+      type="text"
+      placeholder="Last Name"
+      formControlName="lastName">
+
+  </div>
+
   <input
     type="text"
     placeholder="Username"

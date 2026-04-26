@@ -1,0 +1,28 @@
+<div class="sidebar" [class.collapsed]="collapsed">
+
+  <div class="top-row">
+    <h2 *ngIf="!collapsed">SecureDeck</h2>
+
+    <button (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="menu">
+
+    <a routerLink="/dashboard/admin" routerLinkActive="active"
+       *ngIf="role === 'ROLE_ADMIN'">
+      <i class="fas fa-home"></i>
+      <span *ngIf="!collapsed">Dashboard</span>
+    </a>
+
+    <a routerLink="/dashboard/admin/pending-approvals"
+       routerLinkActive="active"
+       *ngIf="role === 'ROLE_ADMIN'">
+      <i class="fas fa-user-check"></i>
+      <span *ngIf="!collapsed">Approvals</span>
+    </a>
+
+  </div>
+
+</div>

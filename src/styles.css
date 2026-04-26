@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body.dark-theme {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+body.dark-theme .top-navbar,
+body.dark-theme .stat-card,
+body.dark-theme .action-card,
+body.dark-theme .table-card,
+body.dark-theme .page-content,
+body.dark-theme .admin-dashboard {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme input,
+body.dark-theme select {
+  background: #334155;
+  color: white;
+  border-color: #475569;
+}

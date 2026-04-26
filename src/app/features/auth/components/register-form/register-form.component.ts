@@ -21,9 +21,22 @@ export class RegisterFormComponent {
     private router: Router
   ) {
     this.registerForm = this.fb.group({
+
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+
       username: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+
+      email: [
+        '',
+        [Validators.required, Validators.email]
+      ],
+
+      password: [
+        '',
+        [Validators.required, Validators.minLength(6)]
+      ],
+
       mobile: ['', Validators.required]
     });
   }
@@ -39,20 +52,34 @@ export class RegisterFormComponent {
     this.errorMessage = '';
     this.successMessage = '';
 
-    this.authService.register(this.registerForm.value).subscribe({
+    console.log(
+      'REGISTER REQUEST =>',
+      this.registerForm.value
+    );
+
+    this.authService.register(
+      this.registerForm.value
+    ).subscribe({
+
       next: (response) => {
         this.loading = false;
-        this.successMessage = 'Registration successful. Wait for admin approval.';
+
+        this.successMessage =
+          'Registration successful. Wait for admin approval.';
 
         setTimeout(() => {
           this.router.navigate(['/login']);
         }, 1500);
       },
+
       error: (error) => {
         this.loading = false;
+
         this.errorMessage =
-          error?.error?.message || 'Registration failed';
+          error?.error?.message ||
+          'Registration failed';
       }
+
     });
   }
 }

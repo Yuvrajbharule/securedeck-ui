@@ -1,0 +1,35 @@
+.top-navbar {
+  background: white;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-navbar h3 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.top-navbar button {
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+body.dark-theme {
+  background: #0f172a;
+  color: white;
+}
+
+body.dark-theme .top-navbar,
+body.dark-theme .stat-card,
+body.dark-theme .action-card {
+  background: #1e293b;
+  color: white;
+}
